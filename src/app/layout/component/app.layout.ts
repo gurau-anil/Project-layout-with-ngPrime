@@ -23,7 +23,7 @@ import { ScrollTopModule } from 'primeng/scrolltop';
         </div>
         <div class="layout-mask animate-fadein"></div>
     </div> 
-    <p-scrolltop target="window" [threshold]="100" icon="pi pi-arrow-up" [buttonProps]="{ severity: 'primary', raised: true, rounded: true }" />
+    <p-scrolltop target="window" [threshold]="100" icon="pi pi-arrow-up" [buttonProps]="{ severity: 'info', raised: true, rounded: true }" />
     `
 })
 export class AppLayout {
