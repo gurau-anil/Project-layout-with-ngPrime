@@ -6,11 +6,12 @@ import { AppTopbar } from './app.topbar';
 import { AppSidebar } from './app.sidebar';
 import { AppFooter } from './app.footer';
 import { LayoutService } from '../service/layout.service';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 @Component({
     selector: 'app-layout',
     standalone: true,
-    imports: [CommonModule, AppTopbar, AppSidebar, RouterModule, AppFooter],
+    imports: [CommonModule, AppTopbar, AppSidebar, RouterModule, AppFooter, ScrollTopModule],
     template: `<div class="layout-wrapper" [ngClass]="containerClass">
         <app-topbar></app-topbar>
         <app-sidebar></app-sidebar>
@@ -21,7 +22,9 @@ import { LayoutService } from '../service/layout.service';
             <app-footer></app-footer>
         </div>
         <div class="layout-mask animate-fadein"></div>
-    </div> `
+    </div> 
+    <p-scrolltop target="window" [threshold]="100" icon="pi pi-arrow-up" [buttonProps]="{ severity: 'primary', raised: true, rounded: true }" />
+    `
 })
 export class AppLayout {
     overlayMenuOpenSubscription: Subscription;
